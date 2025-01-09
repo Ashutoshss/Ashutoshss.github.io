@@ -3,192 +3,62 @@
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Ashutosh Singh | Portfolio</title>
+    <title>Ashutosh-Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        *{
             margin: 0;
             padding: 0;
-            background-color: #000;
-            /* Solid black background */
-            color: #e0e0e0;
-            /* Grey text */
         }
 
-        header {
-            color: #ffffff;
-            /* White text */
-            padding: 1.5em 0;
-            text-align: center;
+        body {
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-family: 'Roboto', sans-serif;
         }
-
-        header h1 {
-            margin: 0;
-            font-size: 2.5em;
-        }
-
-        #about {
-            padding: 2em;
+        nav{
             display: flex;
-            flex-direction: row;
+            justify-content: space-around;
             align-items: center;
-            justify-content: space-between;
+            height: 90px;
         }
-
-        #about img {
-            border-radius: 10px;
-            width: 40%;
-            max-width: 300px;
-            height: auto;
+        nav ul{
+            display: flex;
+            justify-content: center;
         }
-
-        #about .text {
-            width: 55%;
-        }
-
-        /* Modal Styles */
-        .modal {
-            display: none;
-            /* Hidden by default */
-            position: fixed;
-            z-index: 1;
-            left: 0;
-            top: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(0, 0, 0, 0.8);
-            /* Black background with opacity */
-        }
-
-        .modal-content {
-            background-color: #333;
-            margin: 15% auto;
-            padding: 20px;
-            border-radius: 5px;
-            width: 80%;
-            max-width: 400px;
-            color: white;
-        }
-
-        .modal-content h3 {
-            color: #4CAF50;
-        }
-
-        .close {
-            color: #aaa;
-            float: right;
-            font-size: 28px;
-            font-weight: bold;
-        }
-
-        .close:hover,
-        .close:focus {
-            color: #90caf9;
+        nav ul li{
+            list-style: none;
+            margin: 0 23px;
             text-decoration: none;
-            cursor: pointer;
+            color: rgb(255, 255, 255);
         }
-
-        #about button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
+        nav ul li a{
+            text-decoration: none;
+            color: rgb(255, 255, 255);
         }
-
-        #about button:hover {
-            background-color: #45a049;
+        nav ul li a:hover{
+            color: rgb(207, 207, 255);
+            font-size: 1.02rem;
         }
-
-        footer {
-            text-align: center;
-            padding: 1em;
-            background-color: transparent;
-            color: #e0e0e0;
-            margin-top: 2em;
+        .left{
+            font-size: 1.4rem;
         }
     </style>
 </head>
-
 <body>
-
     <header>
-        <h1>Ashutosh Singh</h1>
+        <nav>
+            <div class="left">ASHUTOSH SINGH</div>
+            <div class="right">
+                <ul>
+                    <li><a href ="/">PROJECT</a></li>
+                    <li><a href ="/">ABOUT ME</a></li>
+                    <li><a href ="/">CONTACT</a></li>
+                </ul>
+            </div>
+        </nav>
     </header>
-
-    <div id="about">
-        <div class="text">
-            <h2>About Me</h2>
-            <p>Hello! I'm Ashutosh Singh, a passionate Electronics and Telecommunication Engineer with a strong interest in robotics, AI, and machine learning. I love working on innovative projects that combine my knowledge in these fields, from autonomous robots to image processing and surface water cleaning systems. My goal is to continue exploring these areas and contribute to groundbreaking advancements through hands-on projects and practical applications.</p>
-            <button id="contactBtn">More Info</button>
-        </div>
-        <img src="images/Picsart.png" alt="Ashutosh Singh">
-    </div>
-
-    <section id="projects">
-        <h2>Projects</h2>
-
-        <div class="project">
-            <h3>Project 1: Indoor Autonomous Robot</h3>
-            <img src="project1-image.jpg" alt="Indoor Autonomous Robot">
-            <video controls>
-                <source src="project1-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-
-        <div class="project">
-            <h3>Project 2: Surface Water Cleaning Robot</h3>
-            <img src="project2-image.jpg" alt="Surface Water Cleaning Robot">
-            <video controls>
-                <source src="project2-video.mp4" type="video/mp4">
-                Your browser does not support the video tag.
-            </video>
-        </div>
-    </section>
-
-    <!-- The Modal -->
-    <div id="myModal" class="modal">
-        <div class="modal-content">
-            <span class="close">&times;</span>
-            <h3>Contact Information</h3>
-            <p>GitHub: <a href="https://github.com/your-github-id" target="_blank">github.com/Ashutoshss</a></p>
-            <p>Email: <a href="mailto:ashutosh19082003@gmail.com">ashutosh19082003@gmail.com</a></p>
-            <p>Latitude 19.198081, Longitude 73.089874</p>
-        </div>
-    </div>
-
-    <footer>
-        <p>© 2024 Ashutosh Singh. All Rights Reserved.</p>
-    </footer>
-
-    <script>
-        // Get modal elements
-        var modal = document.getElementById("myModal");
-        var btn = document.getElementById("contactBtn");
-        var span = document.getElementsByClassName("close")[0];
-
-        // Show modal when button is clicked
-        btn.onclick = function() {
-            modal.style.display = "block";
-        }
-
-        // Close modal when 'x' is clicked
-        span.onclick = function() {
-            modal.style.display = "none";
-        }
-
-        // Close modal when clicking outside the modal
-        window.onclick = function(event) {
-            if (event.target == modal) {
-                modal.style.display = "none";
-            }
-        }
-    </script>
-
 </body>
-
-</html>
+    
