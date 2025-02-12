@@ -2,73 +2,103 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>About Me</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>About - Ashutosh Singh</title>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
     <style>
+        * {
+            margin: 0;
+            padding: 0;
+        }
+
         body {
-            font-family: Arial, sans-serif;
-            background-color: black;
-            color: white;
+            background-color: rgb(0, 0, 0);
+            color: rgb(255, 255, 255);
+            font-family: 'Roboto', sans-serif;
+        }
+        
+        nav {
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+            height: 90px;
+        }
+
+        nav ul {
+            display: flex;
+            justify-content: center;
+        }
+
+        nav ul li {
+            list-style: none;
+            margin: 0 23px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: rgb(255, 255, 255);
+        }
+
+        nav ul li a:hover {
+            color: rgb(207, 207, 255);
+            font-size: 1.02rem;
+        }
+
+        .left {
+            font-size: 1.4rem;
+        }
+
+        .container {
             text-align: center;
+            padding: 50px;
         }
-        .content {
-            display: none; /* Hide all sections by default */
-            padding: 20px;
+
+        .container h1 {
+            font-size: 2rem;
         }
-        .active {
-            display: block; /* Show only the active section */
-        }
-        .nav-buttons {
+
+        .container p {
+            font-size: 1.2rem;
             margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
         }
-        button {
-            padding: 10px;
-            margin: 5px;
-            cursor: pointer;
-            background-color: cyan;
-            border: none;
-            color: black;
-            font-size: 16px;
-        }
-        button:hover {
-            background-color: lightblue;
+
+        footer {
+            text-align: center;
+            padding: 20px;
+            background: rgb(25, 25, 25);
+            color: rgb(150, 150, 150);
+            position: absolute;
+            width: 100%;
+            bottom: 0;
         }
     </style>
 </head>
 <body>
-
     <header>
         <nav>
-            <a href="index.html" style="color:white;">Home</a>
+            <div class="left">ASHUTOSH SINGH</div>
+            <div class="right">
+                <ul>
+                    <li><a href="index.html">PROJECT</a></li>
+                    <li><a href="about.html">ABOUT ME</a></li>
+                    <li><a href="#">CONTACT</a></li>
+                </ul>
+            </div>
         </nav>
     </header>
 
-    <h1>About Me</h1>
-
-    <div id="section1" class="content active">
-        <p>Welcome! I'm Ashutosh Singh, an enthusiast in robotics and AI...</p>
-        <button onclick="showSection(2)">Next →</button>
+    <div class="container">
+        <h1>About Me</h1>
+        <p>Hi, I'm Ashutosh Singh, a robotics enthusiast and software developer. I specialize in ROS 2, autonomous navigation, and embedded systems. I love building intelligent robots that can navigate and interact with the real world. Check out my projects and feel free to connect!</p>
     </div>
 
-    <div id="section2" class="content">
-        <p>I have experience in ROS 2, navigation, and sensor fusion...</p>
-        <button onclick="showSection(1)">← Previous</button>
-        <button onclick="showSection(3)">Next →</button>
-    </div>
-
-    <div id="section3" class="content">
-        <p>My projects include an autonomous robot, Kalman Filter implementation, and more...</p>
-        <button onclick="showSection(2)">← Previous</button>
-    </div>
-
-    <script>
-        function showSection(sectionNumber) {
-            let sections = document.querySelectorAll('.content');
-            sections.forEach(section => section.classList.remove('active'));
-            document.getElementById('section' + sectionNumber).classList.add('active');
-        }
-    </script>
-
+    <footer>
+        &copy; 2025 Ashutosh Singh. All rights reserved.
+    </footer>
 </body>
 </html>
