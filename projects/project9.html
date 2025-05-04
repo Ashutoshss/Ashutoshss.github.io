@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon/Ashutosh.png" type="image/x-icon" />
+  <title>Ashutosh Singh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Roboto', sans-serif;
+      background-color: #121212;
+      color: #fff;
+    }
+    header {
+      background-color: #1e1e1e;
+      padding: 20px;
+      text-align: center;
+    }
+    header h1 {
+      margin: 0;
+      font-size: 2rem;
+    }
+    nav ul {
+      list-style: none;
+      display: flex;
+      justify-content: center;
+      padding: 0;
+      margin: 20px 0 0;
+    }
+    nav ul li {
+      margin: 0 15px;
+    }
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+      transition: color 0.3s;
+    }
+    nav ul li a:hover {
+      color: #a0a0ff;
+    }
+    main {
+      padding: 40px;
+      max-width: 1000px;
+      margin: auto;
+    }
+    section {
+      margin-bottom: 60px;
+    }
+    section h2 {
+      margin-bottom: 15px;
+      font-size: 1.8rem;
+      border-bottom: 2px solid #444;
+      padding-bottom: 5px;
+    }
+    section p {
+      line-height: 1.6;
+      font-size: 1.1rem;
+    }
+    iframe, img {
+      width: 100%;
+      max-width: 600px;
+      margin-top: 20px;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background-color: #1e1e1e;
+      color: #aaa;
+    }
+    @media (max-width: 768px) {
+      iframe, img {
+        width: 100%;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <h1><a href="../index.html" style="color: white; text-decoration: none;">ASHUTOSH SINGH</a></h1>
+    <nav>
+      <ul>
+        <li><a href="../project.html">Projects</a></li>
+      </ul>
+    </nav>
+  </header>
+  <main>
+    <section>
+      <h2>Autonomous Indoor Navigation Robot</h2>
+      <p>SIANV is an indoor autonomous robot developed as a final-year project (2024–25). It navigates indoor environments using path planning and obstacle avoidance, relying on a 2D LiDAR for LaserScan and odometry via scan matching. We used Google Cartographer SLAM for mapping and localization. AMCL was initially tested but removed due to the single-sensor setup, with Cartographer providing sufficient localization. The goal was to convert an industrial electric vehicle into an autonomous robot with minimal hardware changes.</p>
+      <img src="../assets/projects/2.jpg" alt="SIANV Robot">
+    </section>
+    <section>
+      <p>We used ROS 2 with the Nav2 stack, employing a hybrid A* global planner and a local planner for real-time obstacle avoidance. Custom ROS 2 nodes handled sensor input, motor control, and state publishing. We also implemented a custom reactive planner for unstructured navigation and a voice-controlled mode. The robot was tested in a lab and home setup, showing reliable autonomous movement. Built in 1–2 months, this project greatly enhanced my understanding of SLAM, localization, and system integration.</p>
+      <iframe src="https://www.youtube.com/embed/69uvqOBZ3l0" title="SIANV Test Video" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section>
+      <h2>Reactive Planner (Non Pre-Built Map Technique)</h2>
+      <p>The reactive planner uses proportional control based on the target’s direction and distance. It considers a field of view (FOV) split into left and right halves. If an obstacle is detected in one half, the robot turns through the other. When both halves have obstacles, the planner computes bypass nodes and chooses the one that minimizes distance to the target. It dynamically re-evaluates and continues navigation using the same approach.</p>
+      <iframe src="https://www.youtube.com/embed/0zwzOs0gl_s" title="Reactive Planner Video" frameborder="0" allowfullscreen></iframe>
+    </section>
+    <section>
+      <h2>Voice-Controlled Mode</h2>
+      <p>Voice control enables users to interact with the robot through speech. Commands like “go forward” or “turn left” are processed via speech recognition and mapped to navigation commands. This provides an intuitive way to control the robot without physical input devices. The feature combines real-time speech-to-text conversion with command parsing and robot actuation.</p>
+    </section>
+  </main>
+  <footer>
+    <p>&copy; 2025 Ashutosh Singh. All rights reserved.</p>
+  </footer>
+</body>
+</html>

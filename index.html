@@ -1,74 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="icon/Ashutosh.png" type="image/x-icon">
-    <title>Ashutosh Singh</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        *{
-            margin: 0;
-            padding: 0;
-        }
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon/Ashutosh.png" type="image/x-icon" />
+  <title>Ashutosh Singh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
 
-        body {
-            background-color: rgb(0, 0, 0);
-            color: rgb(255, 255, 255);
-            font-family: 'Roboto', sans-serif;
-        }
-        nav{
-            display: flex;
-            justify-content: space-around;
-            align-items: center;
-            height: 90px;
-        }
-        nav ul{
-            display: flex;
-            justify-content: center;
-        }
-        nav ul li{
-            list-style: none;
-            margin: 0 23px;
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-        }
-        nav ul li a{
-            text-decoration: none;
-            color: rgb(255, 255, 255);
-        }
-        nav ul li a:hover{
-            color: rgb(207, 207, 255);
-            font-size: 1.02rem;
-        }
-        .left{
-            font-size: 1.4rem;
-        }
-        footer {
-            text-align: center;
-            padding: 20px;
-            background: rgb(25, 25, 25);
-            color: rgb(150, 150, 150);
-        }
-    </style>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      position: relative;
+      z-index: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('assets/wallpaper/memphis-mini-dark.webp');
+      background-repeat: repeat;
+      background-size: auto;
+      filter: blur(1px);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 90px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: rgb(207, 207, 255);
+      font-size: 1.02rem;
+    }
+
+    .left {
+      font-size: 1.4rem;
+    }
+
+    .wrapper {
+      flex: 1;
+    }
+
+    .container {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .container img {
+      width: 300px;
+      height: auto;
+      border-radius: 0;
+      margin: 20px;
+    }
+
+    .container .text {
+      max-width: 600px;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      font-family: 'Calibri Light', sans-serif;
+    }
+
+    .image-grid {
+      width: 80%;
+      margin: 100px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .image-grid img:hover {
+      border-radius: 0px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: transparent;
+      color: rgb(150, 150, 150);
+    }
+
+    .name-link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .name-link:hover {
+      color: rgb(207, 207, 255);
+    }
+
+    .full-img {
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .full-img.show {
+      display: flex;
+    }
+
+    .full-img img {
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .full-img .close-btn {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }
+  </style>
 </head>
 <body>
-    <header>
-        <nav>
-            <div class="left">ASHUTOSH SINGH</div>
-            <div class="right">
-                <ul>
-                    <li><a href ="/">PROJECT</a></li>
-                    <li><a href="https://ashutoshss.github.io/about">ABOUT ME</a></li>
-<!--                     <li><a href ="https://ashutoshss.github.io/contact">CONTACT</a></li> -->
-                </ul>
-            </div>
-        </nav>
-    </header>
-    <footer>
-        &copy; 2025 Ashutosh Singh. All rights reserved.
-    </footer>
+  <header>
+    <nav>
+      <div class="left">
+        <a href="index.html" class="name-link">ASHUTOSH SINGH</a>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="project.html">PROJECTS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <div class="wrapper">
+    <div class="container">
+      <img src="assets/gallery/Ashutosh Singh.png" alt="Ashutosh Singh" />
+      <div class="text">
+        <p>Set to graduate in 2025 with a Bachelor's degree in Engineering from the University of Mumbai. Deeply passionate about robotics and machine learning. I enjoy creating, experimenting, and solving real-world challenges with technology.</p>
+      </div>
+    </div>
+
+    <div class="full-img" id="fullImgBox">
+      <img src="assets/gallery/Ashutosh Singh.png" alt="Ashutosh Singh" id="fullImg" />
+      <img src="assets/icon/close.png" alt="Close" class="close-btn" onclick="closeFullImg()" />
+    </div>
+
+    <div class="image-grid">
+      <img src="assets/gallery/2.jpg" alt="Project 1" onclick="openFullImg(this.src)" />
+      <img src="assets/gallery/3.jpg" alt="Project 2" onclick="openFullImg(this.src)" />
+      <img src="assets/gallery/4.jpg" alt="Project 3" onclick="openFullImg(this.src)" />
+      <!-- <img src="assets/gallery/1.jpg" alt="Project 4" onclick="openFullImg(this.src)" />
+      <img src="assets/gallery/1.jpg" alt="Project 5" onclick="openFullImg(this.src)" />
+      <img src="assets/gallery/1.jpg" alt="Project 6" onclick="openFullImg(this.src)" /> -->
+    </div>
+
+    <script>
+      var fullImgBox = document.getElementById("fullImgBox");
+      var fullImg = document.getElementById("fullImg");
+
+      function openFullImg(pic) {
+        fullImg.src = pic;
+        fullImgBox.classList.add("show");
+      }
+
+      function closeFullImg() {
+        fullImgBox.classList.remove("show");
+      }
+
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && fullImgBox.classList.contains("show")) {
+          closeFullImg();
+        }
+      });
+    </script>
+  </div>
+
+ s
 </body>
-    
+</html>

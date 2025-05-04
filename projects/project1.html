@@ -1,0 +1,488 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon/Ashutosh.png" type="image/x-icon" />
+  <title>Ashutosh Singh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      position: relative;
+      z-index: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../assets/wallpaper/memphis-mini-dark.webp');
+      background-repeat: repeat;
+      background-size: auto;
+      filter: blur(1px);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 90px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: rgb(207, 207, 255);
+      font-size: 1.02rem;
+    }
+
+    .left {
+      font-size: 1.4rem;
+    }
+
+    .wrapper {
+      flex: 1;
+    }
+
+    .container {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .container img {
+      width: 300px;
+      height: auto;
+      border-radius: 0;
+      margin: 20px;
+    }
+
+    .container .text {
+      max-width: 600px;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Calibri Light', sans-serif;
+    }
+
+    .image-grid {
+      width: 80%;
+      margin: 100px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .image-grid img:hover {
+      border-radius: 0px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: transparent;
+      color: rgb(150, 150, 150);
+     
+    }
+
+    .name-link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .name-link:hover {
+      color: rgb(207, 207, 255);
+    }
+
+    
+    /* main section */
+
+    main{
+      margin: 33px 98px;
+
+
+    }
+
+    main p{
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Calibri Light', sans-serif;
+    }
+
+    main hr{
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+ .project-content{
+  width:90vw;
+  
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  
+}
+.left-part .content p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right:10px;
+}
+.right-part img{
+ width:46rem;
+}
+.left-part h1, .design-area h1{
+  margin-bottom:15px;
+}
+.left-part h2{
+  margin-bottom:15px;
+}
+
+.design-area{
+  display: flex;
+  flex-direction: column;
+  margin-top:50px;
+}
+.design-area p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right:10px;
+}
+
+.photos{
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow:wrap row;
+  gap:20px;
+}
+.photos img{
+  width:400px;
+  /* gap: 20px; */
+  width:586px;
+}
+.image-grid {
+      width: 80%;
+      margin: 100px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 30px;
+    }
+
+.image-grid img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+.image-grid img:hover {
+      border-radius: 0px;
+    }
+    .full-img {
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .full-img.show {
+      display: flex;
+    }
+
+    .full-img img {
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .full-img .close-btn {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }    
+
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-part img,
+  .right-part iframe {
+    width: 90vw;
+    max-width: 100%;
+    height: auto;
+  }
+
+  /* .photos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .photos img {
+    width: 90vw;
+    max-width: 100%;
+  } */
+
+  .design-area iframe {
+    width: 90vw;
+    height: auto;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  main {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-part h1,
+  .left-part h2,
+  .left-part h3 {
+    font-size: 1.2rem;
+  }
+
+  .container img {
+    width: 90%;
+  }
+
+  .right-part img {
+    width: 100%;
+  }
+
+  .name-link {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+  </style>
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="left">
+        <a href="../index.html" class="name-link">ASHUTOSH SINGH</a>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="../project.html">PROJECTS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+   
+  </div>
+
+  <main>
+    <div class="project-content">
+      <div class="left-part">
+        <h1>Autonomous Indoor Navigation Robot</h1>
+        <div class="content">
+          <p>SIANV is an indoor autonomous robot developed as a final-year semester project (2024–25). It is designed to navigate autonomously in indoor environments using path planning and obstacle avoidance.SIANV relies on a 2D LiDAR for LaserScan and for odometry estimation scan matching techniques. We used Google’s Cartographer SLAM for mapping and localization in our test area. Although we initially implemented AMCL (Adaptive Monte Carlo Localization) for position tracking, we later removed it since the robot did not use multiple sensors. With a high-frequency LiDAR, we were able to estimate the robot’s pose and obtain reliable data without needing additional sensors. The broader idea was to transform an industrial electric vehicle into an autonomous robot with minimal physical modifications—primarily through computational techniques and the use of necessary sensors.</p>
+        </div>
+      </div>
+      <div class="right-part">
+        <img src="../assets/projects/2.jpg" alt="">
+      </div>
+    </div>
+
+    <div class="project-content">
+      <div class="left-part">
+        <!-- <h2>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur, inventore?</h2>
+        <h3>Lorem ipsum dolor sit amet consectetur adipisicing.</h3> -->
+        <div class="content">
+          <p>We used ROS 2 with the Nav2 navigation stack, which provided a practical and efficient framework. It used a hybrid A* global planner for route planning and a local planner for real-time obstacle avoidance. On the software side, we developed several computation nodes to handle sensor processing, motor control, system state publishing, and communication between hardware and software. We also implemented a custom reactive planner for unstructured environments without prebuilt maps which i talked about in the next paragraph, as well as a voice-assisted navigation mode. I tested SIANV in a lab and at home, where it navigated autonomously and avoided obstacles smoothly. The entire project was built in a duration of a month and two. However, there are a lot of areas of improvement.</p> <p>As of now, I would certainly work with my other project and give it a cool end. I might make changes to it in the future. It was incredibly rewarding to see a robot I built operate smoothly: this final-year project taught me a ton about SLAM, localization, path planning, and real-world system integration.</p>
+        </div>
+      </div>
+      <div class="right-part">
+        <iframe width="560" height="315"
+  src="https://www.youtube.com/embed/69uvqOBZ3l0"
+  title="YouTube video player"
+  frameborder="0"
+  allow=""
+  allowfullscreen>
+</iframe>
+
+      </div>
+    </div>
+
+
+    <div class="project-content">
+      <div class="left-part">
+        
+        <h3>Reactive Planner (the non pre-built map technique )</h3>
+        <div class="content">
+          <p>The reactive planner approach used proportional control for both direction and distance to reach the target. The robot avoids obstacles only if they lie within its trajectory, using a field of view (FOV) approach. The FOV varies depending on the size of the robot, typically around 120 degrees or 90 degrees. This FOV is divided into two halves: the left FOV and the right FOV. If an obstacle is detected in one half, the robot will turn through the other half to avoid it, and vice versa. If obstacles are present in both halves, the planner identifies the boundaries as bypass nodes. The planner then compares the distances of the possible bypass nodes and selects the one that brings the robot closer to the target, navigating through that half. Once the direction is changed, the robot continues to use the left or right half approach to avoid the obstacle.</p>
+        </div>
+      </div>
+      <div class="right-part">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/0zwzOs0gl_s" 
+        title="SIANV Autonomous Robot Demo" 
+        frameborder="0" 
+        allow="" 
+        allowfullscreen>
+      </iframe>
+      </div>
+    </div>
+
+    <div class="project-content">
+      <div class="left-part">
+        <h3>Voice-Controlled Mode</h3>
+        <div class="content">
+          <p>The voice-controlled mode enables intuitive human-robot interaction by allowing the user to issue verbal commands to guide the robot’s motion. Instead of relying on manual control through a keyboard or joystick, the robot interprets spoken instructions and converts them into navigation commands.</p>
+          <p>This feature leverages speech recognition to detect predefined keywords such as “forward”, “backward”, “left”, “right”, “stop” and complex commands. Upon recognizing a command, the system publishes the appropriate velocity message to the /cmd_vel topic, enabling the robot to execute the desired movement.</p>
+        </div>
+      </div>
+      <div class="right-part">
+        <iframe width="560" height="315" 
+        src="https://www.youtube.com/embed/fF7HiEmMYqg" 
+        title="SIANV Autonomous Robot Demo" 
+        frameborder="0" 
+        allow="" 
+        allowfullscreen>
+      </iframe>
+      
+        
+      </div>
+    </div>
+
+    <hr>
+
+    <!-- <div class="design-area">
+      <h1>Design Of Areas:</h1>
+      <p>
+        Lorem ipsum dolor, sit amet consectetur adipisicing elit. Excepturi asperiores aliquid repellendus, rerum vitae totam aut culpa numquam quis odio quidem eaque eos voluptatem explicabo autem, incidunt labore nihil dolorem sunt nesciunt reiciendis? Eveniet tempore amet minima animi incidunt, veritatis ut hic necessitatibus! Nobis cumque inventore numquam, tempora ratione assumenda non quia id quibusdam dignissimos, itaque consequatur labore qui facere repellat modi sequi porro. Similique quasi error sunt porro, alias culpa debitis, neque laboriosam ab quod delectus unde. Esse placeat ratione, officiis earum ipsam quod magnam, molestiae autem explicabo rem fugiat recusandae aspernatur eius nulla temporibus! Quo ipsa maxime rem?
+      </p>
+
+      <iframe width="1500" height="615" src="https://www.youtube.com/embed/NimROnJeQDY?si=Yigc9eK1-tQ7U4L0" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+
+    </div> -->
+    <div class="full-img" id="fullImgBox">
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Ashutosh Singh" id="fullImg" />
+      <img src="../assets/icon/close.png" alt="Close" class="close-btn" onclick="closeFullImg()" />
+    </div>
+
+    <div class="image-grid">
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 1" onclick="openFullImg(this.src)" />
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 2" onclick="openFullImg(this.src)" />
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 3" onclick="openFullImg(this.src)" />
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 4" onclick="openFullImg(this.src)" />
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 5" onclick="openFullImg(this.src)" />
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="Project 6" onclick="openFullImg(this.src)" />
+    </div>
+
+    <script>
+      var fullImgBox = document.getElementById("fullImgBox");
+      var fullImg = document.getElementById("fullImg");
+
+      function openFullImg(pic) {
+        fullImg.src = pic;
+        fullImgBox.classList.add("show");
+      }
+
+      function closeFullImg() {
+        fullImgBox.classList.remove("show");
+      }
+
+      document.addEventListener("keydown", function(event) {
+        if (event.key === "Escape" && fullImgBox.classList.contains("show")) {
+          closeFullImg();
+        }
+      });
+    </script>
+
+<!-- 
+    <div class="photos">
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.17.12_af05ff38.jpg" alt="">
+      <img src="../assets/projects/WhatsApp Image 2025-05-03 at 21.18.19_0a6ef48c.jpg" alt="">
+      <img src="../assets/gallery/1.jpg" alt="">
+      <img src="../assets/gallery/1.jpg" alt="">
+      <img src="../assets/gallery/1.jpg" alt="">
+      <img src="../assets/gallery/1.jpg" alt="">
+ 
+    
+      <img src="./assets/gallery/1.jpg" alt=""> 
+     
+    </div> -->
+    
+  </main>
+
+  <footer>
+    &copy; 2023 Ashutosh Singh. All rights reserved.
+  </footer>
+</body>
+</html>
