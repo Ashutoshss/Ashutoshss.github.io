@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="icon" href="icon/Ashutosh.png" type="image/x-icon" />
+  <title>Blank Canvas - Ashutosh</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    html, body {
+      min-height: 100%;
+      font-family: 'Roboto', sans-serif;
+      color: white;
+      position: relative;
+      z-index: 0;
+      overflow-x: hidden;
+    }
+
+    body::before {
+      content: "";
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-image: url('../assets/wallpaper/memphis-mini-dark.webp');
+      background-repeat: repeat;
+      background-size: auto;
+      filter: blur(1px);
+      z-index: -1;
+    }
+
+    header {
+      background-color: rgba(0, 0, 0, 0.4);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      height: 90px;
+    }
+
+    nav ul {
+      display: flex;
+      justify-content: center;
+    }
+
+    nav ul li {
+      list-style: none;
+      margin: 0 23px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: white;
+    }
+
+    nav ul li a:hover {
+      color: rgb(207, 207, 255);
+      font-size: 1.02rem;
+    }
+
+    .left {
+      font-size: 1.4rem;
+    }
+
+    .wrapper {
+      flex: 1;
+    }
+
+    .container {
+      padding: 50px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-wrap: wrap;
+    }
+
+    .container img {
+      width: 300px;
+      height: auto;
+      border-radius: 0;
+      margin: 20px;
+    }
+
+    .container .text {
+      max-width: 600px;
+    }
+
+    .container p {
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Calibri Light', sans-serif;
+    }
+
+    .image-grid {
+      width: 80%;
+      margin: 100px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 30px;
+    }
+
+    .image-grid img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+    .image-grid img:hover {
+      border-radius: 0px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: transparent;
+      color: rgb(150, 150, 150);
+     
+    }
+
+    .name-link {
+      text-decoration: none;
+      color: white;
+      font-size: 1.4rem;
+      font-weight: 700;
+      transition: color 0.3s ease;
+    }
+
+    .name-link:hover {
+      color: rgb(207, 207, 255);
+    }
+
+    
+    /* main section */
+
+    main{
+      margin: 33px 98px;
+
+
+    }
+
+    main p{
+      font-size: 1.2rem;
+      line-height: 1.6;
+      margin-top: 20px;
+      margin-bottom: 20px;
+      font-family: 'Calibri Light', sans-serif;
+    }
+
+    main hr{
+      margin-top: 80px;
+      margin-bottom: 80px;
+    }
+ .project-content{
+  width:90vw;
+  
+  display: flex;
+  justify-content: space-between;
+  margin-top: 50px;
+  
+}
+.left-part .content p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right:10px;
+}
+.right-part img{
+ width:46rem;
+}
+.left-part h1, .design-area h1{
+  margin-bottom:15px;
+}
+.left-part h2{
+  margin-bottom:15px;
+}
+
+.design-area{
+  display: flex;
+  flex-direction: column;
+  margin-top:50px;
+}
+.design-area p{
+  font-size: 1rem;
+  line-height: 1.5rem;
+  padding-right:10px;
+}
+
+.photos{
+  margin-top: 50px;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  flex-flow:wrap row;
+  gap:20px;
+}
+.photos img{
+  width:400px;
+  /* gap: 20px; */
+  width:586px;
+}
+.image-grid {
+      width: 80%;
+      margin: 100px auto 50px;
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      grid-gap: 30px;
+    }
+
+.image-grid img {
+      width: 100%;
+      cursor: pointer;
+    }
+
+.image-grid img:hover {
+      border-radius: 0px;
+    }
+    .full-img {
+      width: 100%;
+      height: 100vh;
+      background: rgba(0, 0, 0, 0.9);
+      position: fixed;
+      top: 0;
+      left: 0;
+      display: none;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .full-img.show {
+      display: flex;
+    }
+
+    .full-img img {
+      width: 90%;
+      max-width: 500px;
+    }
+
+    .full-img .close-btn {
+      position: absolute;
+      top: 5%;
+      right: 5%;
+      width: 30px;
+      height: 30px;
+      cursor: pointer;
+    }    
+
+
+
+/* Responsive styles */
+@media (max-width: 1024px) {
+  .project-content {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+
+  .right-part img,
+  .right-part iframe {
+    width: 90vw;
+    max-width: 100%;
+    height: auto;
+  }
+
+  .content {
+      max-width: 900px;
+      margin: 20px auto;
+    }
+
+  /* .photos {
+    flex-direction: column;
+    align-items: center;
+  }
+
+
+  .photos img {
+    width: 90vw;
+    max-width: 100%;
+  } */
+
+  .design-area iframe {
+    width: 90vw;
+    height: auto;
+  }
+
+  nav {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 0;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 10px;
+  }
+
+  main {
+    margin: 20px;
+  }
+}
+
+@media (max-width: 600px) {
+  .left-part h1,
+  .left-part h2,
+  .left-part h3 {
+    font-size: 1.2rem;
+  }
+
+  .container img {
+    width: 90%;
+  }
+
+  .right-part img {
+    width: 100%;
+  }
+
+  .name-link {
+    font-size: 1.2rem;
+  }
+}
+
+
+
+  </style>
+
+</head>
+<body>
+  <header>
+    <nav>
+      <div class="left">
+        <a href="../index.html" class="name-link">ASHUTOSH SINGH</a>
+      </div>
+      <div class="right">
+        <ul>
+          <li><a href="../project.html">PROJECTS</a></li>
+        </ul>
+      </div>
+    </nav>
+  </header>
+
+  <main>
+    <div class="project-content">
+      <div class="left-part">
+        <h1>Micro Mouse</h1>
+        <video width="239" height="425" controls>
+        <source src="c:\Users\acer\OneDrive\Pictures\oldMazeSlover.mp4" type="video/mp4">
+        <source src="movie.ogg" type="video/ogg">
+        Your browser does not support the video tag.
+      </video>
+
+  </main>
+  <footer>
+    &copy; 2023 Ashutosh Singh. All rights reserved.
+  </footer>
+</body>
+</html>
